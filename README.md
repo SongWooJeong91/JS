@@ -2,4 +2,6 @@
 Javascript study
 
 <ol>
-  <li>const, let</li>
+  <li>Vanilla JS</li>
+  <li>ES2015+</li>
+</ol>
