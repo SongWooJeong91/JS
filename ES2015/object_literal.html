@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object literal</title>
+</head>
+<body>
+    <h1>객체 리터럴(object literal)</h1>
+    <script>
+        // oldObject 객체에 동적으로 속성을 추가
+        var sayNode = function() {
+            console.log('Node');
+        }
+        var es = 'ES';
+        var oldObject = {
+            sayJS : function() {
+                console.log('JS');
+            },
+            sayNode : sayNode
+        };
+        // 속성명을 동적으로 생성하려면 객체 리터럴 바깥에서 생성 가능
+        oldObject[es + 6] = 'Fantastic'; 
+        oldObject.sayNode();
+        oldObject.sayJS();
+        console.log(oldObject.ES6);
+
+        // 객체 리터럴 사용
+        const newObject = {
+            sayJS() { // 콜론(:)과 function을 붙이지 않아도 된다.
+                console.log('JS');
+            },
+            sayNode, // 속성명: 변수명이 동일한 경우 한 번만 써도 된다.
+            [es+6]:'Fantastic', // 객체 속성명을 동적으로 생성 가능하다.
+        };
+        newObject.sayNode();
+        newObject.sayJS();
+        console.log(newObject.ES6);
+    </script>
+</body>
+</html>
